@@ -9,18 +9,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-//@PropertySource("classpath:application.properties")
+
 public class CommandLineRunnerImpl implements CommandLineRunner {
 
-//    @Value("${track1.id}")
-//    private int id;
-//    @Value("${track1.name}")
-//    private String name;
-//    @Value("${track1.comments}")
-//    private String comments;
-//
-//
-//    Track track1=new Track();
     private TrackRepository trackRepository;
     @Autowired
     public CommandLineRunnerImpl(TrackRepository trackRepository) {
@@ -30,9 +21,6 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Track track1=new Track(1,"raj","good");
-//        track1.setId(id);
-//        track1.setName(name);
-//        track1.setComments(comments);
-//        trackRepository.save(track1);
+        trackRepository.save(track1);
     }
 }

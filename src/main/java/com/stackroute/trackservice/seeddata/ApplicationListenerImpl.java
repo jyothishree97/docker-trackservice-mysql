@@ -10,17 +10,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-//@PropertySource("classpath:application.properties")
-public class ApplicationListenerImpl implements ApplicationListener {
 
-//    @Value("${track.id}")
-//    private int id;
-//    @Value("${track.name}")
-//    private String name;
-//    @Value("${track.comments}")
-//    private String comments;
-//
-//    Track track=new Track();
+public class ApplicationListenerImpl implements ApplicationListener {
 
     private TrackRepository trackRepository;
     @Autowired
@@ -31,9 +22,6 @@ public class ApplicationListenerImpl implements ApplicationListener {
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
 
         Track track1=new Track(1,"raj","good");
-//        track.setId(id);
-//        track.setName(name);
-//        track.setComments(comments);
-//        trackRepository.save(track);
+        trackRepository.save(track1);
     }
 }
